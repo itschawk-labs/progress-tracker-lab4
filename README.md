@@ -17,13 +17,13 @@ Requires Node.js/npm. Run in separate terminals from the repository root:
 **Express backend (port 8000)**
 ```powershell
 cd backend
-npm install
+npm ci
 node server.js
 ```
 
 **Angular frontend (port 4200)**
 ```powershell
-npm install
+npm ci
 npx ng serve
 ```
 
@@ -34,12 +34,18 @@ Open `http://localhost:4200`. The frontend contacts `http://localhost:8000/miles
 - `src/` — Angular application and `services/milestone.ts`
 - `backend/server.js` — Express API endpoints
 - `angular.json`, `package.json`, `tsconfig*.json` — Angular setup
-- `public/` — public assets, if present
-- `docs/` — evidence report drafts and screenshots
 
-## Evidence report
+## Tests
 
-See `docs/IT6203_Lab4_Evidence_Report_Draft.pdf` and `docs/evidence/`. **The report is a draft** and may require final explanations, updated screenshots, and the verified repository URL before submission.
+Unit tests (Vitest via the Angular CLI) cover the milestone service's GET/POST calls and the rendered milestone list:
+
+```powershell
+npx ng test --watch=false
+```
+
+## Lab report
+
+The Lab 4 report and evidence screenshots are submitted separately through the course and are not included in this repository.
 
 ## API examples
 

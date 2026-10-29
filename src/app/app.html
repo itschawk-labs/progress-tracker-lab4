@@ -1,0 +1,66 @@
+
+<main class="container">
+  <h1>Project Progress Tracker</h1>
+  <p>Lab 4: Angular and Node.js/Express Communication</p>
+
+  <mat-card>
+    <mat-card-header>
+      <mat-card-title>Project Milestones</mat-card-title>
+    </mat-card-header>
+
+    <mat-card-content>
+      <p>Milestones retrieved from the Express server:</p>
+
+      @for (milestone of milestones; track milestone.id) {
+        <div class="milestone">
+          <strong>{{ milestone.name }}</strong>
+          <p>Status: {{ milestone.status }}</p>
+        </div>
+      }
+
+      @if (milestones.length === 0) {
+        <p>No milestones loaded yet.</p>
+      }
+    </mat-card-content>
+  </mat-card>
+
+  <mat-card>
+    <mat-card-header>
+      <mat-card-title>Submit New Milestone</mat-card-title>
+    </mat-card-header>
+
+    <mat-card-content>
+      <form [formGroup]="milestoneForm"
+            (ngSubmit)="submitMilestone()">
+
+        <mat-form-field appearance="outline">
+          <mat-label>Milestone Name</mat-label>
+          <input matInput formControlName="name"
+                 placeholder="Enter milestone name">
+        </mat-form-field>
+
+        <mat-form-field appearance="outline">
+          <mat-label>Status</mat-label>
+          <mat-select formControlName="status">
+            <mat-option value="Not Started">Not Started</mat-option>
+            <mat-option value="In Progress">In Progress</mat-option>
+            <mat-option value="Completed">Completed</mat-option>
+          </mat-select>
+        </mat-form-field>
+
+        <button mat-raised-button type="submit"
+                [disabled]="submitting">
+          Submit Milestone
+        </button>
+      </form>
+
+      @if (confirmation) {
+        <p class="success">{{ confirmation }}</p>
+      }
+
+      @if (errorMessage) {
+        <p class="error">{{ errorMessage }}</p>
+      }
+    </mat-card-content>
+  </mat-card>
+</main>

@@ -1,0 +1,46 @@
+
+.container {
+  max-width: 850px;
+  margin: 40px auto;
+  padding: 20px;
+  font-family: Arial, sans-serif;
+}
+
+h1 {
+  color: #243653;
+  margin-bottom: 8px;
+}
+
+mat-card {
+  margin: 24px 0;
+  padding: 20px;
+}
+
+mat-card-content {
+  padding-top: 20px;
+}
+
+.milestone {
+  padding: 12px;
+  margin: 10px 0;
+  border-left: 4px solid #5271d9;
+  background: #f2f5fc;
+  border-radius: 4px;
+}
+
+mat-form-field {
+  display: block;
+  width: 100%;
+  margin-bottom: 12px;
+}
+
+.success {
+  color: #18794e;
+  font-weight: bold;
+  margin-top: 20px;
+}
+
+.error {
+  color: #b42318;
+  margin-top: 20px;
+}

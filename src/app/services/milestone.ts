@@ -1,8 +1,3 @@
-import { Service } from '@angular/core';
-
-@Service()
-export class Milestone {}
-
 import { Injectable, inject } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
 import { Observable } from 'rxjs';
